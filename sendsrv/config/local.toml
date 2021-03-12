@@ -1,0 +1,21 @@
+[server.grpc]
+port = 9002
+enableAccessInterceptorReq = true
+enableAccessInterceptorRes = true
+[server.governor]
+port = 9003
+[mysql.roomx]
+connMaxLifetime = "300s"
+debug = true
+dsn = "root:abcd1234@tcp(localhost:3306)/roomx?charset=utf8mb4&collation=utf8mb4_general_ci&parseTime=True&loc=Local"
+level = "panic"
+maxIdleConns = 50
+maxOpenConns = 100
+[queue.producer.nsq]
+addr = "127.0.0.1:4150"
+dialTimeout = 1000
+readTimeout = 60000
+writeTimeout = 1000
+maxInFlight = 1
+[logger.default]
+debug = true

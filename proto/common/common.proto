@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package common;
+
+option go_package = "roomx/proto/common"; //声明生成的 go 文件所属的包
+
+message Resp {
+	int32 code = 1;
+	string msg = 2;
+}

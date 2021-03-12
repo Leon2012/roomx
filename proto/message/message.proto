@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+package message;
+
+option go_package = "roomx/proto/message"; //声明生成的 go 文件所属的包
+
+import "common/common.proto";
+
+message Model {
+	int32 id = 1;
+	int32 uid = 2;
+	int32 rid = 3;
+	int32 type = 4;
+	string content = 5;
+	string extra = 6;
+	int64 dateline = 7;
+}
+
+message MessageSendReq {
+	int32 uid = 1;
+	int32 rid = 2;
+	int32 type = 3;
+	string content = 4;
+	string extra = 5;
+}
+
+message MessageSendResp {
+	int32 mid = 1;
+	common.Resp resp = 2;
+}
+
+message MessageRecvReq {
+	int32 uid = 1;
+	int32 rid = 2;
+	int32 seq = 3;
+}
+
+message MessageRecvResp {
+	repeated Model messages = 1;
+	int32 nextseq = 2;
+}

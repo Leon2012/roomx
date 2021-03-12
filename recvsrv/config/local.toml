@@ -1,0 +1,29 @@
+[server.grpc]
+port = 8002
+enableAccessInterceptorReq = true
+enableAccessInterceptorRes = true
+[server.governor]
+port = 8003
+[mysql.roomx]
+connMaxLifetime = "300s"
+debug = true
+dsn = "root:abcd1234@tcp(localhost:3306)/roomx?charset=utf8mb4&collation=utf8mb4_general_ci&parseTime=True&loc=Local"
+level = "panic"
+maxIdleConns = 50
+maxOpenConns = 100
+[redis.roomx]
+debug = true # ego增加redis debug，打开后可以看到，配置名、地址、耗时、请求数据、响应数据
+addr = "127.0.0.1:6379"
+[queue.consumer.nsq]
+topic = "new.message.remind"
+channel = "recvsrv"
+lookupdAddrs = ["127.0.0.1:4161"]
+dialTimeout = 1000
+readTimeout = 60000
+writeTimeout = 1000
+lookupdPollInterval = 1
+maxInFlight = 1
+[logger.default]
+debug = true
+enableAddCaller = true
+enableAsync = false

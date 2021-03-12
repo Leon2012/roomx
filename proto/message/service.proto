@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package message; //声明所在包
+
+option go_package = "roomx/proto/message"; //声明生成的 go 文件所属的包
+
+import "message/message.proto"; //导入同包内的其他 proto 文件
+
+service SendSrv {
+	rpc Send(MessageSendReq) returns(MessageSendResp) {};
+}
+
+service RecvSrv {
+	rpc Recv(MessageRecvReq) returns (MessageRecvResp) {};
+}
