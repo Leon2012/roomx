@@ -7,13 +7,13 @@ import (
 )
 
 type Message struct {
-	Id       int32  `gorm:"AUTO_INCREMENT" json:"id"`
-	Uid      int32  `json:"uid"`
-	Rid      int32  `json:"rid"`
-	Type     int32  `json:"type"`
-	Content  string `gorm:"not null" json:"content"`
+	Id       int32  `gorm:"AUTO_INCREMENT" json:"id,omitempty"`
+	Uid      int32  `json:"uid" binding:"required"`
+	Rid      int32  `json:"rid" binding:"required"`
+	Type     int32  `json:"type" binding:"required"`
+	Content  string `gorm:"not null" json:"content" binding:"required"`
 	Extra    string `json:"extra"`
-	Dateline int64  `json:"dateline"`
+	Dateline int64  `json:"dateline,omitempty" `
 }
 
 type Messages []*Message

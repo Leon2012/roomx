@@ -48,7 +48,8 @@ func MessagesNext(rds *eredis.Component, uid, rid, currId int32, currMessage *mo
 			nextId = xMessage.Id
 		} else {
 			messages = mMessages
-			nextId = 0
+			xMessage = mMessages[len(mMessages)-1]
+			nextId = xMessage.Id
 		}
 	} else {
 		item, err = currMessage.ToBase64String()
@@ -73,7 +74,8 @@ func MessagesNext(rds *eredis.Component, uid, rid, currId int32, currMessage *mo
 			nextId = xMessage.Id
 		} else {
 			messages = mMessages
-			nextId = 0
+			xMessage = mMessages[len(mMessages)-1]
+			nextId = xMessage.Id
 		}
 	}
 

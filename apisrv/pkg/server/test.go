@@ -1,50 +1,9 @@
-package main
+package server
 
 import (
 	"fmt"
 	xgin "github.com/gin-gonic/gin"
-	ego2 "github.com/gotomicro/ego"
-	"github.com/gotomicro/ego/core/elog"
-	"github.com/gotomicro/ego/server/egin"
-	"github.com/jcuga/golongpoll"
-	"math/rand"
-	longpoll2 "roomx/components/longpoll"
-	"time"
 )
-
-func main() {
-	ego := ego2.New()
-	gin := egin.Load("server.http").Build()
-	longpoll := longpoll2.Load("server.longpoll").Build(gin)
-
-	go generateRandomEvents(longpoll.LongpollManager())
-
-	gin.GET("/basic/events", func(ctx *xgin.Context) {
-		longpoll.LongpollManager().SubscriptionHandler(ctx.Writer, ctx.Request)
-	})
-	gin.GET("/basic", BasicExampleHomepage)
-	if err := ego.Serve(longpoll).Run(); err != nil {
-		elog.Panic("startup", elog.FieldErr(err))
-	}
-}
-
-func generateRandomEvents(lpManager *golongpoll.LongpollManager) {
-	farmEvents := []string{
-		"Cow says 'Moooo!'",
-		"Duck went 'Quack!'",
-		"Chicken says: 'Cluck!'",
-		"Goat chewed grass.",
-		"Pig went 'Oink! Oink!'",
-		"Horse ate hay.",
-		"Tractor went: Vroom Vroom!",
-		"Farmer ate bacon.",
-	}
-	// every 0-5 seconds, something happens at the farm:
-	for {
-		time.Sleep(time.Duration(rand.Intn(5000)) * time.Millisecond)
-		lpManager.Publish("farm", farmEvents[rand.Intn(len(farmEvents))])
-	}
-}
 
 func BasicExampleHomepage(ctx *xgin.Context) {
 	fmt.Fprintf(ctx.Writer, `
@@ -69,14 +28,15 @@ func BasicExampleHomepage(ctx *xgin.Context) {
 
     // Let's subscribe to animal related events.
     var category = "farm";
-
+    var nextSeq = 0;
     (function poll() {
         var timeout = 45;  // in seconds
         var optionalSince = "";
         if (sinceTime) {
             optionalSince = "&since_time=" + sinceTime;
         }
-        var pollUrl = "/basic/events?timeout=" + timeout + "&category=" + category + optionalSince;
+        var optionalSeq = "&next_seq=" + nextSeq; 
+        var pollUrl = "/recv?timeout=" + timeout + "&category=" + category + optionalSince + optionalSeq;
         // how long to wait before starting next longpoll request in each case:
         var successDelay = 10;  // 10 ms
         var errorDelay = 3000;  // 3 sec
@@ -88,7 +48,12 @@ func BasicExampleHomepage(ctx *xgin.Context) {
                     for (var i = 0; i < data.events.length; i++) {
                         // Display event
                         var event = data.events[i];
-                        $("#animal-events").append("<li>" + event.data + " at " + (new Date(event.timestamp).toLocaleTimeString()) +  "</li>")
+						var eventData = event.data;
+                        var messages = eventData.messages;
+                        nextSeq = eventData.nextseq;
+						for (var n = 0; n < messages.length; n++) {
+							$("#animal-events").append("<li>" + messages[n].content + " at " + (new Date(event.timestamp).toLocaleTimeString()) + " nextseq " + nextSeq +  "</li>")
+						}
                         // Update sinceTime to only request events that occurred after this one.
                         sinceTime = event.timestamp;
                     }

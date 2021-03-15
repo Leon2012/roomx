@@ -4,3 +4,15 @@ port = 7001
 port = 7003
 [server.longpoll]
 maxTimeoutSeconds = 120
+[service.send]
+debug = true
+addr = "127.0.0.1:9002"
+enableAccessInterceptorReq = true
+enableAccessInterceptorRes = true
+[service.recv]
+debug = true
+addr = "127.0.0.1:8002"
+enableAccessInterceptorReq = true
+enableAccessInterceptorRes = true
+[logger.default]
+debug = true

@@ -1,11 +1,11 @@
 package longpoll
 
 import (
+	"context"
 	"github.com/gotomicro/ego/core/elog"
 	"github.com/gotomicro/ego/server"
 	"github.com/gotomicro/ego/server/egin"
 	"github.com/jcuga/golongpoll"
-	"context"
 )
 
 const PackageName = "server.egin.longpoll"
@@ -56,13 +56,15 @@ func (c *Component) Start() error {
 }
 
 func (c *Component) Stop() error {
+	err := c.gin.Stop()
 	c.lpManager.Shutdown()
-	return c.gin.Stop()
+	return err
 }
 
 func (c *Component) GracefulStop(ctx context.Context) error {
+	err := c.gin.GracefulStop(ctx)
 	c.lpManager.Shutdown()
-	return c.gin.GracefulStop(ctx)
+	return err
 }
 
 func (c *Component) Info() *server.ServiceInfo {
