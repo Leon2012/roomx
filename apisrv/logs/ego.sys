@@ -1,0 +1,72 @@
+{"lv":"info","ts":1615801342,"msg":"init default logger","comp":"core.elog"}
+{"lv":"info","ts":1615801342,"msg":"init ego logger","comp":"core.elog"}
+{"lv":"info","ts":1615801342,"msg":"init config","comp":"core.econf","addr":"./config/local.toml"}
+{"lv":"info","ts":1615801342,"msg":"init max procs","comp":"app","value":12}
+{"lv":"warn","ts":1615801342,"msg":"not init trace","value":"need trace config: [trace.jaeger] in config","comp":"app"}
+{"lv":"info","ts":1615801342,"msg":"start server","comp":"server.egin.longpoll","compName":"server.longpoll","addr":"http://[::]:7001"}
+{"lv":"info","ts":1615801348,"msg":"stop server","comp":"server.egin.longpoll","compName":"server.longpoll","addr":"http://[::]:7001"}
+{"lv":"info","ts":1615801349,"msg":"stop ego, bye!","comp":"app"}
+{"lv":"info","ts":1615801598,"msg":"init default logger","comp":"core.elog"}
+{"lv":"info","ts":1615801598,"msg":"init ego logger","comp":"core.elog"}
+{"lv":"info","ts":1615801598,"msg":"init config","comp":"core.econf","addr":"./config/local.toml"}
+{"lv":"info","ts":1615801598,"msg":"init max procs","comp":"app","value":12}
+{"lv":"warn","ts":1615801598,"msg":"not init trace","value":"need trace config: [trace.jaeger] in config","comp":"app"}
+{"lv":"info","ts":1615801598,"msg":"start server","comp":"server.egin.longpoll","compName":"server.longpoll","addr":"http://[::]:7001"}
+{"lv":"info","ts":1615801598,"msg":"add route","comp":"server.egin","compName":"server.http","method":"GET","path":"/events"}
+{"lv":"info","ts":1615801600,"msg":"stop server","comp":"server.egin.longpoll","compName":"server.longpoll","addr":"http://[::]:7001"}
+{"lv":"info","ts":1615801600,"msg":"stop ego, bye!","comp":"app"}
+{"lv":"info","ts":1615801610,"msg":"init default logger","comp":"core.elog"}
+{"lv":"info","ts":1615801610,"msg":"init ego logger","comp":"core.elog"}
+{"lv":"info","ts":1615801610,"msg":"init config","comp":"core.econf","addr":"./config/local.toml"}
+{"lv":"info","ts":1615801610,"msg":"init max procs","comp":"app","value":12}
+{"lv":"warn","ts":1615801610,"msg":"not init trace","value":"need trace config: [trace.jaeger] in config","comp":"app"}
+{"lv":"info","ts":1615801610,"msg":"start server","comp":"server.egin.longpoll","compName":"server.longpoll","addr":"http://[::]:7001"}
+{"lv":"info","ts":1615801610,"msg":"add route","comp":"server.egin","compName":"server.http","method":"GET","path":"/events"}
+{"lv":"info","ts":1615801623,"msg":"access","comp":"server.egin","compName":"server.http","cost":0.142,"type":"GET","method":"/events","ip":"127.0.0.1","size":49,"peerIp":"127.0.0.1","event":"normal","err":"","code":200}
+{"lv":"info","ts":1615801623,"msg":"access","comp":"server.egin","compName":"server.http","cost":0.036,"type":"GET","method":"/favicon.ico","ip":"127.0.0.1","size":-1,"peerIp":"127.0.0.1","event":"normal","err":"","code":404}
+{"lv":"info","ts":1615801635,"msg":"access","comp":"server.egin","compName":"server.http","cost":0.039,"type":"GET","method":"/events","ip":"127.0.0.1","size":49,"peerIp":"127.0.0.1","event":"normal","err":"","code":200}
+{"lv":"warn","ts":1615801716,"msg":"access","comp":"server.egin","compName":"server.http","cost":45002.66,"type":"GET","method":"/events","ip":"127.0.0.1","size":64,"peerIp":"127.0.0.1","event":"slow","err":"","code":200}
+{"lv":"warn","ts":1615801770,"msg":"access","comp":"server.egin","compName":"server.http","cost":939.19,"type":"GET","method":"/events","ip":"127.0.0.1","size":-1,"peerIp":"127.0.0.1","event":"slow","err":"","code":200}
+{"lv":"warn","ts":1615801815,"msg":"access","comp":"server.egin","compName":"server.http","cost":45002.131,"type":"GET","method":"/events","ip":"127.0.0.1","size":64,"peerIp":"127.0.0.1","event":"slow","err":"","code":200}
+{"lv":"info","ts":1615801879,"msg":"stop server","comp":"server.egin.longpoll","compName":"server.longpoll","addr":"http://[::]:7001"}
+{"lv":"info","ts":1615801880,"msg":"stop ego, bye!","comp":"app"}
+{"lv":"info","ts":1615801884,"msg":"init default logger","comp":"core.elog"}
+{"lv":"info","ts":1615801884,"msg":"init ego logger","comp":"core.elog"}
+{"lv":"info","ts":1615801884,"msg":"init config","comp":"core.econf","addr":"./config/local.toml"}
+{"lv":"info","ts":1615801884,"msg":"init max procs","comp":"app","value":12}
+{"lv":"warn","ts":1615801884,"msg":"not init trace","value":"need trace config: [trace.jaeger] in config","comp":"app"}
+{"lv":"info","ts":1615801884,"msg":"start server","comp":"server.egin.longpoll","compName":"server.longpoll","addr":"http://[::]:7001"}
+{"lv":"info","ts":1615801884,"msg":"add route","comp":"server.egin","compName":"server.http","method":"GET","path":"/basic"}
+{"lv":"info","ts":1615801884,"msg":"add route","comp":"server.egin","compName":"server.http","method":"GET","path":"/basic/events"}
+{"lv":"info","ts":1615801892,"msg":"access","comp":"server.egin","compName":"server.http","cost":0.7,"type":"GET","method":"/basic","ip":"127.0.0.1","size":3176,"peerIp":"127.0.0.1","event":"normal","err":"","code":200}
+{"lv":"warn","ts":1615801937,"msg":"access","comp":"server.egin","compName":"server.http","cost":45001.477,"type":"GET","method":"/basic/events","ip":"127.0.0.1","size":64,"peerIp":"127.0.0.1","event":"slow","err":"","code":200}
+{"lv":"info","ts":1615801974,"msg":"stop server","comp":"server.egin.longpoll","compName":"server.longpoll","addr":"http://[::]:7001"}
+{"lv":"info","ts":1615802064,"msg":"init default logger","comp":"core.elog"}
+{"lv":"info","ts":1615802064,"msg":"init ego logger","comp":"core.elog"}
+{"lv":"info","ts":1615802064,"msg":"init config","comp":"core.econf","addr":"./config/local.toml"}
+{"lv":"info","ts":1615802064,"msg":"init max procs","comp":"app","value":12}
+{"lv":"warn","ts":1615802064,"msg":"not init trace","value":"need trace config: [trace.jaeger] in config","comp":"app"}
+{"lv":"info","ts":1615802064,"msg":"start server","comp":"server.egin.longpoll","compName":"server.longpoll","addr":"http://[::]:7001"}
+{"lv":"info","ts":1615802064,"msg":"add route","comp":"server.egin","compName":"server.http","method":"GET","path":"/basic"}
+{"lv":"info","ts":1615802064,"msg":"add route","comp":"server.egin","compName":"server.http","method":"GET","path":"/basic/events"}
+{"lv":"info","ts":1615802080,"msg":"access","comp":"server.egin","compName":"server.http","cost":0.672,"type":"GET","method":"/basic","ip":"127.0.0.1","size":3176,"peerIp":"127.0.0.1","event":"normal","err":"","code":200}
+{"lv":"warn","ts":1615802082,"msg":"access","comp":"server.egin","compName":"server.http","cost":1836.266,"type":"GET","method":"/basic/events","ip":"127.0.0.1","size":90,"peerIp":"127.0.0.1","event":"slow","err":"","code":200}
+{"lv":"info","ts":1615802082,"msg":"access","comp":"server.egin","compName":"server.http","cost":59.663,"type":"GET","method":"/basic/events","ip":"127.0.0.1","size":85,"peerIp":"127.0.0.1","event":"normal","err":"","code":200}
+{"lv":"warn","ts":1615802085,"msg":"access","comp":"server.egin","compName":"server.http","cost":3261.643,"type":"GET","method":"/basic/events","ip":"127.0.0.1","size":86,"peerIp":"127.0.0.1","event":"slow","err":"","code":200}
+{"lv":"warn","ts":1615802086,"msg":"access","comp":"server.egin","compName":"server.http","cost":1432.937,"type":"GET","method":"/basic/events","ip":"127.0.0.1","size":82,"peerIp":"127.0.0.1","event":"slow","err":"","code":200}
+{"lv":"warn","ts":1615802091,"msg":"access","comp":"server.egin","compName":"server.http","cost":4087.506,"type":"GET","method":"/basic/events","ip":"127.0.0.1","size":85,"peerIp":"127.0.0.1","event":"slow","err":"","code":200}
+{"lv":"info","ts":1615802091,"msg":"access","comp":"server.egin","compName":"server.http","cost":453.3,"type":"GET","method":"/basic/events","ip":"127.0.0.1","size":85,"peerIp":"127.0.0.1","event":"normal","err":"","code":200}
+{"lv":"warn","ts":1615802092,"msg":"access","comp":"server.egin","compName":"server.http","cost":1242.963,"type":"GET","method":"/basic/events","ip":"127.0.0.1","size":85,"peerIp":"127.0.0.1","event":"slow","err":"","code":200}
+{"lv":"warn","ts":1615802097,"msg":"access","comp":"server.egin","compName":"server.http","cost":4936.211,"type":"GET","method":"/basic/events","ip":"127.0.0.1","size":85,"peerIp":"127.0.0.1","event":"slow","err":"","code":200}
+{"lv":"warn","ts":1615802100,"msg":"access","comp":"server.egin","compName":"server.http","cost":2345.269,"type":"GET","method":"/basic/events","ip":"127.0.0.1","size":94,"peerIp":"127.0.0.1","event":"slow","err":"","code":200}
+{"lv":"warn","ts":1615802103,"msg":"access","comp":"server.egin","compName":"server.http","cost":2264.058,"type":"GET","method":"/basic/events","ip":"127.0.0.1","size":82,"peerIp":"127.0.0.1","event":"slow","err":"","code":200}
+{"lv":"info","ts":1615802104,"msg":"access","comp":"server.egin","compName":"server.http","cost":0.048,"type":"GET","method":"/basic/events","ip":"127.0.0.1","size":86,"peerIp":"127.0.0.1","event":"normal","err":"","code":200}
+{"lv":"warn","ts":1615802105,"msg":"access","comp":"server.egin","compName":"server.http","cost":711.948,"type":"GET","method":"/basic/events","ip":"127.0.0.1","size":82,"peerIp":"127.0.0.1","event":"slow","err":"","code":200}
+{"lv":"info","ts":1615802106,"msg":"access","comp":"server.egin","compName":"server.http","cost":0.602,"type":"GET","method":"/basic/events","ip":"127.0.0.1","size":86,"peerIp":"127.0.0.1","event":"normal","err":"","code":200}
+{"lv":"info","ts":1615802107,"msg":"access","comp":"server.egin","compName":"server.http","cost":0.08,"type":"GET","method":"/basic/events","ip":"127.0.0.1","size":152,"peerIp":"127.0.0.1","event":"normal","err":"","code":200}
+{"lv":"warn","ts":1615802109,"msg":"access","comp":"server.egin","compName":"server.http","cost":1827.903,"type":"GET","method":"/basic/events","ip":"127.0.0.1","size":90,"peerIp":"127.0.0.1","event":"slow","err":"","code":200}
+{"lv":"info","ts":1615802110,"msg":"access","comp":"server.egin","compName":"server.http","cost":361.03,"type":"GET","method":"/basic/events","ip":"127.0.0.1","size":86,"peerIp":"127.0.0.1","event":"normal","err":"","code":200}
+{"lv":"warn","ts":1615802114,"msg":"access","comp":"server.egin","compName":"server.http","cost":3547.284,"type":"GET","method":"/basic/events","ip":"127.0.0.1","size":94,"peerIp":"127.0.0.1","event":"slow","err":"","code":200}
+{"lv":"warn","ts":1615802118,"msg":"access","comp":"server.egin","compName":"server.http","cost":3774.227,"type":"GET","method":"/basic/events","ip":"127.0.0.1","size":85,"peerIp":"127.0.0.1","event":"slow","err":"","code":200}
+{"lv":"warn","ts":1615802120,"msg":"access","comp":"server.egin","compName":"server.http","cost":1335.48,"type":"GET","method":"/basic/events","ip":"127.0.0.1","size":82,"peerIp":"127.0.0.1","event":"slow","err":"","code":200}
+{"lv":"info","ts":1615802121,"msg":"stop server","comp":"server.egin.longpoll","compName":"server.longpoll","addr":"http://[::]:7001"}
