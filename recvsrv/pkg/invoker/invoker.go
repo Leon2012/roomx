@@ -3,18 +3,17 @@ package invoker
 import (
 	"github.com/gotomicro/ego-component/egorm"
 	"github.com/gotomicro/ego-component/eredis"
-	"github.com/gotomicro/ego/core/elog"
+	"roomx/components/logrus"
 )
 
 var (
-	Logger *elog.Component
+	Logger *logrus.Component
 	Db     *egorm.Component
 	Redis  *eredis.Component
 )
 
 func Init() error {
-	Logger = elog.Load("logger.default").Build()
-	Logger.IsDebugMode()
+	Logger = logrus.Load("logger.logrus").Build()
 	Db = egorm.Load("mysql.roomx").Build()
 	Redis = eredis.Load("redis.roomx").Build()
 	return nil

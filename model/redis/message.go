@@ -6,7 +6,7 @@ import (
 	"github.com/go-redis/redis/v8"
 	"github.com/gotomicro/ego-component/eredis"
 	"roomx/model"
-	"roomx/recvsrv/pkg/invoker"
+	"roomx/components/logrus"
 )
 
 const ROOMX_SORTEDSET_PREFIX = "roomx.messages.sortedset"
@@ -53,7 +53,7 @@ func MessagesNext(rds *eredis.Component, uid, rid, currId int32, currMessage *mo
 		}
 	} else {
 		item, err = currMessage.ToBase64String()
-		invoker.Logger.Infof("current message : %s", item)
+		logrus.Info("current message : %s", item)
 		if err != nil {
 			return messages, nextId, err
 		}
@@ -61,7 +61,7 @@ func MessagesNext(rds *eredis.Component, uid, rid, currId int32, currMessage *mo
 		if err != nil {
 			return messages, nextId, err
 		}
-		invoker.Logger.Infof("get message rank : %d", rank)
+		logrus.Info("get message rank : %d", rank)
 		start = rank
 		stop = rank + ROOMX_MESSAGES_PAGE_NUM
 		if items, err = rds.ZRange(ctx, key, start, stop); err != nil {

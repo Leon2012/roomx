@@ -25,13 +25,13 @@ func (s *MessageService) Recv(context context.Context, req *message.MessageRecvR
 	)
 	currId = req.Seq
 	if currId > 0 {
-		invoker.Logger.Infof("message seq : %d", req.Seq)
+		invoker.Logger.Info("message seq : %d", req.Seq)
 		xMessage, err = mysql.MessageGet(invoker.Db, currId)
 		if err != nil {
 			invoker.Logger.Error("call MessageGet failed, error : " + err.Error())
 			return nil, err
 		}
-		invoker.Logger.Infof("get message : %s", xMessage.Content)
+		invoker.Logger.Info("get message : %s", xMessage.Content)
 	}
 	messages, nextId, err = redis.MessagesNext(invoker.Redis, req.Uid, req.Rid, currId, xMessage)
 	if err != nil {

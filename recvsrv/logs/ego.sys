@@ -344,3 +344,18 @@
 {"lv":"info","ts":1615811570,"msg":"access","comp":"server.egrpc","compName":"server.grpc","type":"unary","event":"normal","method":"/message.RecvSrv/Recv","cost":1.326,"peerName":"main","peerIp":"127.0.0.1","req":{"uid":10,"rid":10,"seq":81},"res":{"messages":[{"id":81,"uid":10,"rid":10,"type":1,"content":"Hello Leon 77777","extra":"Hello","dateline":1615811561}],"nextseq":81}}
 {"lv":"info","ts":1615811572,"msg":"access","comp":"server.egrpc","compName":"server.grpc","type":"unary","event":"normal","method":"/message.RecvSrv/Recv","cost":1.743,"peerName":"main","peerIp":"127.0.0.1","req":{"uid":10,"rid":10,"seq":81},"res":{"messages":[{"id":81,"uid":10,"rid":10,"type":1,"content":"Hello Leon 77777","extra":"Hello","dateline":1615811561}],"nextseq":81}}
 {"lv":"info","ts":1615811575,"msg":"access","comp":"server.egrpc","compName":"server.grpc","type":"unary","event":"normal","method":"/message.RecvSrv/Recv","cost":3.032,"peerName":"main","peerIp":"127.0.0.1","req":{"uid":10,"rid":10,"seq":81},"res":{"messages":[{"id":81,"uid":10,"rid":10,"type":1,"content":"Hello Leon 77777","extra":"Hello","dateline":1615811561}],"nextseq":81}}
+{"lv":"info","ts":1615896750,"msg":"stop server","comp":"server.egin","compName":"server.governor","addr":"http://192.168.120.80:8003"}
+{"lv":"info","ts":1615896750,"msg":"stop server","comp":"server.egrpc","compName":"server.grpc","addr":"grpc://0.0.0.0:8002"}
+{"lv":"info","ts":1615896751,"msg":"stop ego, bye!","comp":"app"}
+{"lv":"info","ts":1615896843,"msg":"init default logger","comp":"core.elog"}
+{"lv":"info","ts":1615896843,"msg":"init ego logger","comp":"core.elog"}
+{"lv":"info","ts":1615896843,"msg":"init config","comp":"core.econf","addr":"./config/local.toml"}
+{"lv":"info","ts":1615896843,"msg":"init max procs","comp":"app","value":12}
+{"lv":"info","ts":1615896843,"msg":"reinit default logger","comp":"core.elog"}
+{"lv":"warn","ts":1615896843,"msg":"not init trace","value":"need trace config: [trace.jaeger] in config","comp":"app"}
+{"lv":"info","ts":1615896843,"msg":"start mysql","comp":"component.egorm","compName":"mysql.roomx","addr":"localhost:3306","name":"roomx"}
+{"lv":"info","ts":1615896843,"msg":"start server","comp":"server.egin","compName":"server.governor","addr":"http://192.168.120.80:8003"}
+{"lv":"info","ts":1615896843,"msg":"start server","comp":"server.egrpc","compName":"server.grpc","addr":"grpc://0.0.0.0:8002"}
+{"lv":"info","ts":1615896875,"msg":"stop server","comp":"server.egin","compName":"server.governor","addr":"http://192.168.120.80:8003"}
+{"lv":"info","ts":1615896875,"msg":"stop server","comp":"server.egrpc","compName":"server.grpc","addr":"grpc://0.0.0.0:8002"}
+{"lv":"info","ts":1615896876,"msg":"stop ego, bye!","comp":"app"}

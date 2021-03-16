@@ -27,3 +27,11 @@ maxInFlight = 1
 debug = true
 enableAddCaller = true
 enableAsync = false
+[logger.logrus]
+level = "debug"
+path  = ""
+timestampFormat = "2006-01-02 15:04:05"
+reportCaller = true
+disableColors = false
+fullTimestamp = true
+disableTimestamp = false

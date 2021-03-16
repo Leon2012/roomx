@@ -1,23 +1,3 @@
-{"lv":"info","ts":1615808224,"msg":"stop server","comp":"server.egin","compName":"server.governor","addr":"http://192.168.120.80:9003"}
-{"lv":"info","ts":1615808224,"msg":"stop server","comp":"server.egrpc","compName":"server.grpc","addr":"grpc://0.0.0.0:9002"}
-{"lv":"info","ts":1615808224,"msg":"stop ego, bye!","comp":"app"}
-{"lv":"info","ts":1615808230,"msg":"init default logger","comp":"core.elog"}
-{"lv":"info","ts":1615808230,"msg":"init ego logger","comp":"core.elog"}
-{"lv":"info","ts":1615808230,"msg":"init config","comp":"core.econf","addr":"./config/local.toml"}
-{"lv":"info","ts":1615808230,"msg":"init max procs","comp":"app","value":12}
-{"lv":"info","ts":1615808230,"msg":"reinit default logger","comp":"core.elog"}
-{"lv":"warn","ts":1615808230,"msg":"not init trace","value":"need trace config: [trace.jaeger] in config","comp":"app"}
-{"lv":"info","ts":1615808230,"msg":"start mysql","comp":"component.egorm","compName":"mysql.roomx","addr":"localhost:3306","name":"roomx"}
-{"lv":"info","ts":1615808230,"msg":"start server","comp":"server.egin","compName":"server.governor","addr":"http://192.168.120.80:9003"}
-{"lv":"info","ts":1615808230,"msg":"start server","comp":"server.egrpc","compName":"server.grpc","addr":"grpc://0.0.0.0:9002"}
-{"lv":"info","ts":1615808335,"msg":"access","comp":"server.egrpc","compName":"server.grpc","type":"unary","event":"normal","method":"/message.SendSrv/Send","cost":52.462,"peerName":"main","peerIp":"127.0.0.1","req":{"uid":10,"rid":10,"type":10,"content":"Hello","extra":"Hello"},"res":{"mid":71,"resp":{}}}
-{"lv":"info","ts":1615808341,"msg":"access","comp":"server.egrpc","compName":"server.grpc","type":"unary","event":"normal","method":"/message.SendSrv/Send","cost":24.702,"peerName":"main","peerIp":"127.0.0.1","req":{"uid":10,"rid":10,"type":10,"content":"Hello","extra":"Hello"},"res":{"mid":72,"resp":{}}}
-{"lv":"info","ts":1615808342,"msg":"access","comp":"server.egrpc","compName":"server.grpc","type":"unary","event":"normal","method":"/message.SendSrv/Send","cost":6.642,"peerName":"main","peerIp":"127.0.0.1","req":{"uid":10,"rid":10,"type":10,"content":"Hello","extra":"Hello"},"res":{"mid":73,"resp":{}}}
-{"lv":"info","ts":1615809494,"msg":"access","comp":"server.egrpc","compName":"server.grpc","type":"unary","event":"normal","method":"/message.SendSrv/Send","cost":42.271,"peerName":"main","peerIp":"127.0.0.1","req":{"uid":10,"rid":10,"type":10,"content":"Hello Leon","extra":"Hello"},"res":{"mid":74,"resp":{}}}
-{"lv":"info","ts":1615809548,"msg":"access","comp":"server.egrpc","compName":"server.grpc","type":"unary","event":"normal","method":"/message.SendSrv/Send","cost":18.593,"peerName":"main","peerIp":"127.0.0.1","req":{"uid":10,"rid":10,"type":10,"content":"Hello Leon 11111","extra":"Hello"},"res":{"mid":75,"resp":{}}}
-{"lv":"info","ts":1615811545,"msg":"access","comp":"server.egrpc","compName":"server.grpc","type":"unary","event":"normal","method":"/message.SendSrv/Send","cost":33.856,"peerName":"main","peerIp":"127.0.0.1","req":{"uid":10,"rid":10,"type":10,"content":"Hello Leon 22222","extra":"Hello"},"res":{"mid":76,"resp":{}}}
-{"lv":"info","ts":1615811551,"msg":"access","comp":"server.egrpc","compName":"server.grpc","type":"unary","event":"normal","method":"/message.SendSrv/Send","cost":16.123,"peerName":"main","peerIp":"127.0.0.1","req":{"uid":10,"rid":10,"type":10,"content":"Hello Leon 33333","extra":"Hello"},"res":{"mid":77,"resp":{}}}
-{"lv":"info","ts":1615811553,"msg":"access","comp":"server.egrpc","compName":"server.grpc","type":"unary","event":"normal","method":"/message.SendSrv/Send","cost":8.35,"peerName":"main","peerIp":"127.0.0.1","req":{"uid":10,"rid":10,"type":10,"content":"Hello Leon 4444","extra":"Hello"},"res":{"mid":78,"resp":{}}}
-{"lv":"info","ts":1615811556,"msg":"access","comp":"server.egrpc","compName":"server.grpc","type":"unary","event":"normal","method":"/message.SendSrv/Send","cost":20.073,"peerName":"main","peerIp":"127.0.0.1","req":{"uid":10,"rid":10,"type":10,"content":"Hello Leon 5555","extra":"Hello"},"res":{"mid":79,"resp":{}}}
-{"lv":"info","ts":1615811558,"msg":"access","comp":"server.egrpc","compName":"server.grpc","type":"unary","event":"normal","method":"/message.SendSrv/Send","cost":18.437,"peerName":"main","peerIp":"127.0.0.1","req":{"uid":10,"rid":10,"type":10,"content":"Hello Leon 66666","extra":"Hello"},"res":{"mid":80,"resp":{}}}
-{"lv":"info","ts":1615811561,"msg":"access","comp":"server.egrpc","compName":"server.grpc","type":"unary","event":"normal","method":"/message.SendSrv/Send","cost":34.781,"peerName":"main","peerIp":"127.0.0.1","req":{"uid":10,"rid":10,"type":10,"content":"Hello Leon 77777","extra":"Hello"},"res":{"mid":81,"resp":{}}}
+{"lv":"info","ts":1615896746,"msg":"stop server","comp":"server.egin","compName":"server.governor","addr":"http://192.168.120.80:9003"}
+{"lv":"info","ts":1615896746,"msg":"stop server","comp":"server.egrpc","compName":"server.grpc","addr":"grpc://0.0.0.0:9002"}
+{"lv":"info","ts":1615896746,"msg":"stop ego, bye!","comp":"app"}

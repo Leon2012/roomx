@@ -11,9 +11,14 @@ require (
 	github.com/gotomicro/ego-component/eredis v0.2.1
 	github.com/jcuga/golongpoll v1.1.0
 	github.com/jinzhu/gorm v1.9.12
+	github.com/jonboulle/clockwork v0.2.2 // indirect
+	github.com/lestrrat-go/file-rotatelogs v2.4.0+incompatible
+	github.com/lestrrat-go/strftime v1.0.4 // indirect
 	github.com/micro/go-log v0.1.0
 	github.com/nsqio/go-nsq v1.0.8
 	github.com/nu7hatch/gouuid v0.0.0-20131221200532-179d4d0c4d8d // indirect
+	github.com/rifflock/lfshook v0.0.0-20180920164130-b9218ef580f5
+	github.com/sirupsen/logrus v1.4.2
 	github.com/spf13/cast v1.3.1
 	go.uber.org/zap v1.15.0
 	google.golang.org/grpc v1.29.1
