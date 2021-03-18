@@ -2,7 +2,7 @@ package main
 
 import (
 	"github.com/gotomicro/ego"
-	"github.com/gotomicro/ego/core/elog"
+	"roomx/components/logrus"
 	"roomx/apisrv/pkg/client"
 	"roomx/apisrv/pkg/invoker"
 	"roomx/apisrv/pkg/server"
@@ -19,6 +19,6 @@ func main() {
 			server.InitLongpoll(),
 		).
 		Run(); err != nil {
-		elog.Panic(err.Error())
+		logrus.Fatal(err.Error())
 	}
 }

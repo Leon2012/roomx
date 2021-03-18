@@ -37,7 +37,7 @@ func InitRouters() {
 			seq, _ := strconv.ParseInt(seqStr, 10, 32)
 			Nextseq = int32(seq)
 		}
-		invoker.Logger.Infof("next seq :%d", Nextseq)
+		invoker.Logger.Info("next seq :%d", Nextseq)
 		Longpoll.LongpollManager().SubscriptionHandler(context.Writer, context.Request)
 	})
 	Gin.POST("/send", func(context *gin.Context) {

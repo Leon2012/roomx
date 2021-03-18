@@ -14,5 +14,11 @@ debug = true
 addr = "127.0.0.1:8002"
 enableAccessInterceptorReq = true
 enableAccessInterceptorRes = true
-[logger.default]
-debug = true
+[logger.logrus]
+level = "debug"
+path  = ""
+timestampFormat = "2006-01-02 15:04:05"
+reportCaller = true
+disableColors = false
+fullTimestamp = true
+disableTimestamp = false

@@ -1,0 +1,12 @@
+{"lv":"info","ts":1615896746,"msg":"stop server","comp":"server.egin","compName":"server.governor","addr":"http://192.168.120.80:9003"}
+{"lv":"info","ts":1615896746,"msg":"stop server","comp":"server.egrpc","compName":"server.grpc","addr":"grpc://0.0.0.0:9002"}
+{"lv":"info","ts":1615896746,"msg":"stop ego, bye!","comp":"app"}
+{"lv":"info","ts":1615898691,"msg":"init default logger","comp":"core.elog"}
+{"lv":"info","ts":1615898691,"msg":"init ego logger","comp":"core.elog"}
+{"lv":"info","ts":1615898691,"msg":"init config","comp":"core.econf","addr":"./config/local.toml"}
+{"lv":"info","ts":1615898691,"msg":"init max procs","comp":"app","value":12}
+{"lv":"info","ts":1615898691,"msg":"reinit default logger","comp":"core.elog"}
+{"lv":"warn","ts":1615898691,"msg":"not init trace","value":"need trace config: [trace.jaeger] in config","comp":"app"}
+{"lv":"info","ts":1615898691,"msg":"start mysql","comp":"component.egorm","compName":"mysql.roomx","addr":"localhost:3306","name":"roomx"}
+{"lv":"info","ts":1615898691,"msg":"start server","comp":"server.egin","compName":"server.governor","addr":"http://192.168.120.80:9003"}
+{"lv":"info","ts":1615898691,"msg":"start server","comp":"server.egrpc","compName":"server.grpc","addr":"grpc://0.0.0.0:9002"}

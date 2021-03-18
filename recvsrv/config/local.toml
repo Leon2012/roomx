@@ -23,10 +23,6 @@ readTimeout = 60000
 writeTimeout = 1000
 lookupdPollInterval = 1
 maxInFlight = 1
-[logger.default]
-debug = true
-enableAddCaller = true
-enableAsync = false
 [logger.logrus]
 level = "debug"
 path  = ""

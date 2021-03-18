@@ -3,10 +3,11 @@ package redis
 import (
 	"context"
 	"fmt"
+	"roomx/components/logrus"
+	"roomx/model"
+
 	"github.com/go-redis/redis/v8"
 	"github.com/gotomicro/ego-component/eredis"
-	"roomx/model"
-	"roomx/components/logrus"
 )
 
 const ROOMX_SORTEDSET_PREFIX = "roomx.messages.sortedset"
@@ -14,20 +15,19 @@ const ROOMX_HASH_PREFIX = "roomx.message.hash"
 const ROOMX_MESSAGES_MAX = 20000
 const ROOMX_MESSAGES_PAGE_NUM = 5
 
-
 func MessagesNext(rds *eredis.Component, uid, rid, currId int32, currMessage *model.Message) (model.Messages, int32, error) {
 	var (
 		mMessages, messages model.Messages
 		xMessage            *model.Message
 		err                 error
 		nextId              int32
-		pageNum             int64 = ROOMX_MESSAGES_PAGE_NUM + 1
+		pageNum             int64 = ROOMX_MESSAGES_PAGE_NUM
 		key                 string
-		rank, start, stop         int64
+		rank, start, stop   int64
 		ctx                 = context.Background()
-		items                []string
-		item                 string
-		total int64
+		items               []string
+		item                string
+		total               int64
 	)
 	key = genSortedsetKey(rid)
 	//第一次返回数据
@@ -42,14 +42,13 @@ func MessagesNext(rds *eredis.Component, uid, rid, currId int32, currMessage *mo
 			return messages, nextId, err
 		}
 		mMessages, err = model.NewMessagesWithBase64String(items)
-		if len(mMessages) > int(ROOMX_MESSAGES_PAGE_NUM) {
-			messages = mMessages[0:ROOMX_MESSAGES_PAGE_NUM]
-			xMessage = mMessages[len(mMessages)-1]
-			nextId = xMessage.Id
-		} else {
+		if len(mMessages) > 0 {
 			messages = mMessages
 			xMessage = mMessages[len(mMessages)-1]
 			nextId = xMessage.Id
+		} else { //无数据
+			messages = mMessages
+			nextId = 0
 		}
 	} else {
 		item, err = currMessage.ToBase64String()
@@ -62,20 +61,19 @@ func MessagesNext(rds *eredis.Component, uid, rid, currId int32, currMessage *mo
 			return messages, nextId, err
 		}
 		logrus.Info("get message rank : %d", rank)
-		start = rank
-		stop = rank + ROOMX_MESSAGES_PAGE_NUM
+		start = rank + 1
+		stop = start + ROOMX_MESSAGES_PAGE_NUM - 1
 		if items, err = rds.ZRange(ctx, key, start, stop); err != nil {
 			return messages, nextId, err
 		}
 		mMessages, err = model.NewMessagesWithBase64String(items)
-		if len(mMessages) > int(ROOMX_MESSAGES_PAGE_NUM) {
-			messages = mMessages[0:ROOMX_MESSAGES_PAGE_NUM]
-			xMessage = mMessages[len(mMessages)-1]
-			nextId = xMessage.Id
-		} else {
+		if len(mMessages) > 0 {
 			messages = mMessages
 			xMessage = mMessages[len(mMessages)-1]
 			nextId = xMessage.Id
+		} else { //无数据
+			messages = mMessages
+			nextId = 0
 		}
 	}
 

@@ -1,10 +1,11 @@
 package main
 
 import (
-	"github.com/gotomicro/ego"
-	"github.com/gotomicro/ego/core/elog"
+	"roomx/components/logrus"
 	"roomx/sendsrv/pkg/invoker"
 	"roomx/sendsrv/pkg/server"
+
+	"github.com/gotomicro/ego"
 )
 
 func main() {
@@ -15,6 +16,6 @@ func main() {
 			server.InitVernor(),
 		).
 		Run(); err != nil {
-		elog.Panic(err.Error())
+		logrus.Fatal(err.Error())
 	}
 }

@@ -17,5 +17,11 @@ dialTimeout = 1000
 readTimeout = 60000
 writeTimeout = 1000
 maxInFlight = 1
-[logger.default]
-debug = true
+[logger.logrus]
+level = "debug"
+path  = ""
+timestampFormat = "2006-01-02 15:04:05"
+reportCaller = true
+disableColors = false
+fullTimestamp = true
+disableTimestamp = false

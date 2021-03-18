@@ -1,0 +1,37 @@
+{"lv":"info","ts":1615898678,"msg":"init default logger","comp":"core.elog"}
+{"lv":"info","ts":1615898678,"msg":"init ego logger","comp":"core.elog"}
+{"lv":"info","ts":1615898678,"msg":"init config","comp":"core.econf","addr":"./config/local.toml"}
+{"lv":"info","ts":1615898678,"msg":"init max procs","comp":"app","value":12}
+{"lv":"warn","ts":1615898678,"msg":"not init trace","value":"need trace config: [trace.jaeger] in config","comp":"app"}
+{"lv":"panic","ts":1615898681,"msg":"dial grpc server","comp":"client.egrpc","compName":"service.recv","addr":"127.0.0.1:8002","errKind":"request err","error":"context deadline exceeded","stack":"github.com/gotomicro/ego/core/elog.(*Component).Panic\n\t/Users/leon.peng/go/pkg/mod/github.com/gotomicro/ego@v0.3.10/core/elog/component.go:383\ngithub.com/gotomicro/ego/client/egrpc.newComponent\n\t/Users/leon.peng/go/pkg/mod/github.com/gotomicro/ego@v0.3.10/client/egrpc/component.go:47\ngithub.com/gotomicro/ego/client/egrpc.(*Container).Build\n\t/Users/leon.peng/go/pkg/mod/github.com/gotomicro/ego@v0.3.10/client/egrpc/container.go:70\nroomx/apisrv/pkg/client.InitRecvClient\n\t/Users/leon.peng/Documents/projects/go/roomx/apisrv/pkg/client/recv.go:15\ngithub.com/gotomicro/ego.runSerialFuncReturnError\n\t/Users/leon.peng/go/pkg/mod/github.com/gotomicro/ego@v0.3.10/ego_function.go:221\ngithub.com/gotomicro/ego.(*ego).Invoker\n\t/Users/leon.peng/go/pkg/mod/github.com/gotomicro/ego@v0.3.10/ego.go:119\nmain.main\n\t/Users/leon.peng/Documents/projects/go/roomx/apisrv/main.go:13\nruntime.main\n\t/usr/local/go/src/runtime/proc.go:204"}
+{"lv":"info","ts":1615898700,"msg":"init default logger","comp":"core.elog"}
+{"lv":"info","ts":1615898700,"msg":"init ego logger","comp":"core.elog"}
+{"lv":"info","ts":1615898700,"msg":"init config","comp":"core.econf","addr":"./config/local.toml"}
+{"lv":"info","ts":1615898700,"msg":"init max procs","comp":"app","value":12}
+{"lv":"warn","ts":1615898700,"msg":"not init trace","value":"need trace config: [trace.jaeger] in config","comp":"app"}
+{"lv":"panic","ts":1615898703,"msg":"dial grpc server","comp":"client.egrpc","compName":"service.recv","addr":"127.0.0.1:8002","errKind":"request err","error":"context deadline exceeded","stack":"github.com/gotomicro/ego/core/elog.(*Component).Panic\n\t/Users/leon.peng/go/pkg/mod/github.com/gotomicro/ego@v0.3.10/core/elog/component.go:383\ngithub.com/gotomicro/ego/client/egrpc.newComponent\n\t/Users/leon.peng/go/pkg/mod/github.com/gotomicro/ego@v0.3.10/client/egrpc/component.go:47\ngithub.com/gotomicro/ego/client/egrpc.(*Container).Build\n\t/Users/leon.peng/go/pkg/mod/github.com/gotomicro/ego@v0.3.10/client/egrpc/container.go:70\nroomx/apisrv/pkg/client.InitRecvClient\n\t/Users/leon.peng/Documents/projects/go/roomx/apisrv/pkg/client/recv.go:15\ngithub.com/gotomicro/ego.runSerialFuncReturnError\n\t/Users/leon.peng/go/pkg/mod/github.com/gotomicro/ego@v0.3.10/ego_function.go:221\ngithub.com/gotomicro/ego.(*ego).Invoker\n\t/Users/leon.peng/go/pkg/mod/github.com/gotomicro/ego@v0.3.10/ego.go:119\nmain.main\n\t/Users/leon.peng/Documents/projects/go/roomx/apisrv/main.go:13\nruntime.main\n\t/usr/local/go/src/runtime/proc.go:204"}
+{"lv":"info","ts":1615898719,"msg":"init default logger","comp":"core.elog"}
+{"lv":"info","ts":1615898719,"msg":"init ego logger","comp":"core.elog"}
+{"lv":"info","ts":1615898719,"msg":"init config","comp":"core.econf","addr":"./config/local.toml"}
+{"lv":"info","ts":1615898719,"msg":"init max procs","comp":"app","value":12}
+{"lv":"warn","ts":1615898719,"msg":"not init trace","value":"need trace config: [trace.jaeger] in config","comp":"app"}
+{"lv":"info","ts":1615898719,"msg":"start grpc client","comp":"client.egrpc","compName":"service.recv","addr":"127.0.0.1:8002","name":"service.recv"}
+{"lv":"info","ts":1615898719,"msg":"start grpc client","comp":"client.egrpc","compName":"service.send","addr":"127.0.0.1:9002","name":"service.send"}
+{"lv":"info","ts":1615898719,"msg":"start server","comp":"server.egin.longpoll","compName":"server.longpoll","addr":"http://[::]:7001"}
+{"lv":"info","ts":1615898719,"msg":"add route","comp":"server.egin","compName":"server.http","method":"GET","path":"/basic"}
+{"lv":"info","ts":1615898719,"msg":"add route","comp":"server.egin","compName":"server.http","method":"GET","path":"/recv"}
+{"lv":"info","ts":1615898719,"msg":"add route","comp":"server.egin","compName":"server.http","method":"POST","path":"/send"}
+{"lv":"info","ts":1615898739,"msg":"access","comp":"server.egin","compName":"server.http","cost":0.097,"type":"GET","method":"/basic","ip":"127.0.0.1","size":3473,"peerIp":"127.0.0.1","event":"normal","err":"","code":200}
+{"lv":"warn","ts":1615898742,"msg":"access","comp":"server.egin","compName":"server.http","cost":2273.645,"type":"GET","method":"/recv","ip":"127.0.0.1","size":611,"peerIp":"127.0.0.1","event":"slow","err":"","code":200}
+{"lv":"warn","ts":1615898742,"msg":"access","comp":"server.egin","compName":"server.http","cost":706.241,"type":"GET","method":"/recv","ip":"127.0.0.1","size":197,"peerIp":"127.0.0.1","event":"slow","err":"","code":200}
+{"lv":"warn","ts":1615898746,"msg":"access","comp":"server.egin","compName":"server.http","cost":3499.552,"type":"GET","method":"/recv","ip":"127.0.0.1","size":197,"peerIp":"127.0.0.1","event":"slow","err":"","code":200}
+{"lv":"warn","ts":1615898749,"msg":"access","comp":"server.egin","compName":"server.http","cost":3147.414,"type":"GET","method":"/recv","ip":"127.0.0.1","size":197,"peerIp":"127.0.0.1","event":"slow","err":"","code":200}
+{"lv":"info","ts":1615898749,"msg":"access","comp":"server.egin","compName":"server.http","cost":75.886,"type":"GET","method":"/recv","ip":"127.0.0.1","size":197,"peerIp":"127.0.0.1","event":"normal","err":"","code":200}
+{"lv":"warn","ts":1615898754,"msg":"access","comp":"server.egin","compName":"server.http","cost":4720.207,"type":"GET","method":"/recv","ip":"127.0.0.1","size":197,"peerIp":"127.0.0.1","event":"slow","err":"","code":200}
+{"lv":"warn","ts":1615898757,"msg":"access","comp":"server.egin","compName":"server.http","cost":3265.431,"type":"GET","method":"/recv","ip":"127.0.0.1","size":197,"peerIp":"127.0.0.1","event":"slow","err":"","code":200}
+{"lv":"warn","ts":1615898758,"msg":"access","comp":"server.egin","compName":"server.http","cost":1201.017,"type":"GET","method":"/recv","ip":"127.0.0.1","size":197,"peerIp":"127.0.0.1","event":"slow","err":"","code":200}
+{"lv":"warn","ts":1615898760,"msg":"access","comp":"server.egin","compName":"server.http","cost":1434.43,"type":"GET","method":"/recv","ip":"127.0.0.1","size":197,"peerIp":"127.0.0.1","event":"slow","err":"","code":200}
+{"lv":"warn","ts":1615898763,"msg":"access","comp":"server.egin","compName":"server.http","cost":3225.562,"type":"GET","method":"/recv","ip":"127.0.0.1","size":197,"peerIp":"127.0.0.1","event":"slow","err":"","code":200}
+{"lv":"info","ts":1615898764,"msg":"stop server","comp":"server.egin.longpoll","compName":"server.longpoll","addr":"http://[::]:7001"}
+{"lv":"warn","ts":1615898767,"msg":"access","comp":"server.egin","compName":"server.http","cost":4095.038,"type":"GET","method":"/recv","ip":"127.0.0.1","size":197,"peerIp":"127.0.0.1","event":"slow","err":"","code":200}
+{"lv":"info","ts":1615898768,"msg":"stop ego, bye!","comp":"app"}

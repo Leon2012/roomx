@@ -1,14 +1,14 @@
 package invoker
 
 import (
-	"github.com/gotomicro/ego/core/elog"
+	"roomx/components/logrus"
 )
 
 var (
-	Logger *elog.Component
+	Logger *logrus.Component
 )
 
 func Init() error {
-	Logger = elog.Load("logger.default").Build()
+	Logger = logrus.Load("logger.logrus").Build()
 	return nil
 }
