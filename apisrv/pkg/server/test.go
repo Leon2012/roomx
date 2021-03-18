@@ -2,6 +2,7 @@ package server
 
 import (
 	"fmt"
+
 	xgin "github.com/gin-gonic/gin"
 )
 
@@ -51,9 +52,14 @@ func BasicExampleHomepage(ctx *xgin.Context) {
 						var eventData = event.data;
                         var messages = eventData.messages;
                         nextSeq = eventData.nextseq;
-						for (var n = 0; n < messages.length; n++) {
-							$("#animal-events").append("<li>" + messages[n].content + " at " + (new Date(event.timestamp).toLocaleTimeString()) + " nextseq " + nextSeq +  "</li>")
-						}
+                        if (nextSeq <= 0) {
+                            nextSeq = 0;
+                        }
+                        if (typeof(messages) != "undefined") {
+                            for (var n = 0; n < messages.length; n++) {
+                                $("#animal-events").append("<li>" + messages[n].content + " at " + (new Date(event.timestamp).toLocaleTimeString()) + " nextseq " + nextSeq +  "</li>")
+                            }
+                        }
                         // Update sinceTime to only request events that occurred after this one.
                         sinceTime = event.timestamp;
                     }

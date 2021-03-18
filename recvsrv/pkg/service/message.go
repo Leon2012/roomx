@@ -2,12 +2,13 @@ package service
 
 import (
 	"context"
-	"github.com/gotomicro/ego/server/egrpc"
 	"roomx/model"
 	"roomx/model/mysql"
 	"roomx/model/redis"
 	"roomx/proto/message"
 	"roomx/recvsrv/pkg/invoker"
+
+	"github.com/gotomicro/ego/server/egrpc"
 )
 
 type MessageService struct {
@@ -21,9 +22,12 @@ func (s *MessageService) Recv(context context.Context, req *message.MessageRecvR
 		currId, nextId int32
 		err            error
 		resp           *message.MessageRecvResp = &message.MessageRecvResp{}
-		xModel          *message.Model
+		xModel         *message.Model
 	)
 	currId = req.Seq
+	if currId < 0 {
+		currId = 0
+	}
 	if currId > 0 {
 		invoker.Logger.Info("message seq : %d", req.Seq)
 		xMessage, err = mysql.MessageGet(invoker.Db, currId)
@@ -49,6 +53,9 @@ func (s *MessageService) Recv(context context.Context, req *message.MessageRecvR
 			Dateline: xMessage.Dateline,
 		}
 		resp.Messages = append(resp.Messages, xModel)
+	}
+	if nextId == 0 {
+		nextId = currId
 	}
 	resp.Nextseq = nextId
 	return resp, nil
